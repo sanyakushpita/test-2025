@@ -1,0 +1,89 @@
+<section class="tech-skills">
+  <h2 class="visually-hidden">Tech Skills</h2>
+
+  <div class="marquee-wrapper top">
+    <div class="marquee marquee-top">
+      <ul>
+        <li>HTML/CSS</li>
+        <li class="divider top-divider"></li>
+        <li>JavaScript</li>
+        <li class="divider top-divider"></li>
+        <li>React</li>
+        <li class="divider top-divider"></li>
+        <li>Node.js</li>
+        <li class="divider top-divider"></li>
+        <li>React Native</li>
+        <li class="divider top-divider"></li>
+        <li>Typescript</li>
+        <li class="divider top-divider"></li>
+
+        <li>HTML/CSS</li>
+        <li class="divider top-divider"></li>
+        <li>JavaScript</li>
+        <li class="divider top-divider"></li>
+        <li>React</li>
+        <li class="divider top-divider"></li>
+        <li>Node.js</li>
+        <li class="divider top-divider"></li>
+        <li>React Native</li>
+        <li class="divider top-divider"></li>
+        <li>Typescript</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="marquee-wrapper bottom">
+    <div class="marquee marquee-bottom">
+      <ul>
+        <li>Typescript</li>
+        <li class="divider bottom-divider"></li>
+        <li>React Native</li>
+        <li class="divider bottom-divider"></li>
+        <li>Node.js</li>
+        <li class="divider bottom-divider"></li>
+        <li>React</li>
+        <li class="divider bottom-divider"></li>
+        <li>JavaScript</li>
+        <li class="divider bottom-divider"></li>
+        <li>HTML/CSS</li>
+        <li class="divider bottom-divider"></li>
+
+        <li>Typescript</li>
+        <li class="divider bottom-divider"></li>
+        <li>React Native</li>
+        <li class="divider bottom-divider"></li>
+        <li>Node.js</li>
+        <li class="divider bottom-divider"></li>
+        <li>React</li>
+        <li class="divider bottom-divider"></li>
+        <li>JavaScript</li>
+        <li class="divider bottom-divider"></li>
+        <li>HTML/CSS</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+.tech-skills { margin: 60px 0; position: relative; } .visually-hidden {
+position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding:
+0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+.marquee-wrapper { overflow: hidden; padding: 40px 0; } .marquee-wrapper.top {
+background-color: #bcdfd1; z-index: 2; position: relative; }
+.marquee-wrapper.bottom { background-color: #e4e5e6; transform: rotate(2deg);
+z-index: 1; position: relative; } .marquee { display: inline-flex; align-items:
+center; white-space: nowrap; font-family: 'Poppins', sans-serif; font-weight:
+500; font-size: 36px; line-height: 48px; letter-spacing: 0.5px; text-transform:
+uppercase; text-align: center; gap: 12px; will-change: transform;
+animation-duration: 15s; animation-timing-function: ease-in-out;
+animation-iteration-count: infinite; animation-direction: alternate; }
+.marquee-top { animation-name: scroll-left-right; color: #292929; }
+.marquee-bottom { animation-name: scroll-right-left; color: #4caf50; }
+@keyframes scroll-left-right { 0% { transform: translateX(0%); } 100% {
+transform: translateX(-50%); } } @keyframes scroll-right-left { 0% { transform:
+translateX(-50%); } 100% { transform: translateX(0%); } } /* Скидаємо стандартні
+стилі списків */ ul { padding: 0; margin: 0; list-style: none; display: flex; }
+li { display: inline-block; } /* Стилі для роздільників */ .divider { display:
+inline-block; margin: 0 20px; width: 8px; height: 8px; transform:
+rotate(178deg); border-radius: 2px; /* Вирівнювання по центру */ align-self:
+center; /* Вирівнювання по вертикалі */ } .top-divider { background-color:
+#4caf50; } .bottom-divider { background-color: #292929; }

@@ -1,0 +1,209 @@
+/* Мобільна версія (mobile-first) */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tech-skills {
+  margin: 60px 0;
+  position: relative;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  padding: 40px 0;
+  position: relative;
+}
+
+.marquee-wrapper.top {
+  background-color: #bcdfd1;
+  z-index: 2;
+}
+
+.marquee-wrapper.bottom {
+  background-color: #e4e5e6;
+  transform: rotate(2deg);
+  z-index: 1;
+}
+
+.marquee {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 36px;
+  line-height: 1.4;
+  font-weight: 500;
+  white-space: nowrap;
+  animation-duration: 15s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.marquee-top {
+  color: #292929;
+  animation-name: scroll-left-right;
+}
+
+.marquee-bottom {
+  color: #4caf50;
+  animation-name: scroll-right-left;
+}
+
+.marquee li {
+  position: relative;
+  padding-right: 30px; /* Відступ перед квадратиком */
+}
+
+/* Квадратики між словами */
+.marquee-top li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #4caf50;
+  border-radius: 2px;
+}
+
+.marquee-bottom li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #292929;
+  border-radius: 2px;
+}
+
+/* Анімація */
+@keyframes scroll-left-right {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right-left {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Темна тема — загальне */
+body.dark-theme {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+/* Верхній рядок */
+body.dark-theme .marquee-wrapper.top {
+  background-color: #204136;
+}
+
+body.dark-theme .marquee-top {
+  color: #f0f0f0;
+}
+
+body.dark-theme .marquee-top li:not(:last-child)::after {
+  background-color: #14c57c; /* ← правильний колір квадратика */
+}
+
+/* Нижній рядок */
+body.dark-theme .marquee-wrapper.bottom {
+  background-color: #2a2d32;
+}
+
+body.dark-theme .marquee-bottom {
+  color: #14c57c;
+}
+
+body.dark-theme .marquee-bottom li:not(:last-child)::after {
+  background-color: #f0f0f0;
+}
+:root {
+  --light-grey: #f0f0f0;
+  --black: #2a2d32;
+  --accet-green: #14c57c;
+}
+
+/* Обгортка перемикача */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 24px;
+  border-radius: 16px;
+  background: var(--light-grey);
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle input {
+  display: none;
+}
+
+/* Основний кружок */
+.toggle-slider {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accet-green);
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+/* Темна тема: перемикач */
+body.dark-theme .theme-toggle {
+  background: var(--black);
+}
+
+/* Темна тема: зелений кружок з чорним напівмісяцем */
+body.dark-theme .toggle-slider {
+  transform: translateX(32px);
+  background: var(--accet-green);
+}
+
+/* Темна тема: чорний напівкруг зверху */
+body.dark-theme .toggle-slider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--black);
+  transform: translateX(-6px); /* регулює форму півмісяця */
+  transition: transform 0.4s ease;
+}

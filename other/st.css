@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Skills Marquee</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="tech-skills">
+      <h2 class="visually-hidden">Tech Skills</h2>
+
+      <div class="marquee-wrapper top">
+        <ul class="marquee marquee-top">
+          <li>HTML/CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>React Native</li>
+          <li>Typescript</li>
+          <li>HTML/CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>React Native</li>
+          <li>Typescript</li>
+        </ul>
+      </div>
+
+      <div class="marquee-wrapper bottom">
+        <ul class="marquee marquee-bottom">
+          <li>Typescript</li>
+          <li>React Native</li>
+          <li>Node.js</li>
+          <li>React</li>
+          <li>JavaScript</li>
+          <li>HTML/CSS</li>
+          <li>Typescript</li>
+          <li>React Native</li>
+          <li>Node.js</li>
+          <li>React</li>
+          <li>JavaScript</li>
+          <li>HTML/CSS</li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>
+
+
+/* Мобільна версія (mobile-first) */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tech-skills {
+  margin: 60px 0;
+  position: relative;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  padding: 30px 0;
+  position: relative;
+}
+
+.marquee-wrapper.top {
+  background-color: #bcdfd1;
+  z-index: 2;
+}
+
+.marquee-wrapper.bottom {
+  background-color: #e4e5e6;
+  transform: rotate(2deg);
+  z-index: 1;
+}
+
+.marquee {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 500;
+  white-space: nowrap;
+  animation-duration: 15s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.marquee-top {
+  color: #292929;
+  animation-name: scroll-left-right;
+}
+
+.marquee-bottom {
+  color: #4caf50;
+  animation-name: scroll-right-left;
+}
+
+.marquee li {
+  position: relative;
+  padding-right: 30px; /* Відступ перед квадратиком */
+}
+
+/* Квадратики між словами */
+.marquee-top li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #4caf50;
+  border-radius: 2px;
+}
+
+.marquee-bottom li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #292929;
+  border-radius: 2px;
+}
+
+/* Анімація */
+@keyframes scroll-left-right {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right-left {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

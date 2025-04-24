@@ -3,12 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Tech Skills Marquee</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is a sample paragraph to demonstrate HTML structure.</p>
-    <a href="https://www.example.com">Visit Example</a>
+    <section class="tech-skills">
+      <h2 class="visually-hidden">Tech Skills</h2>
+
+      <div class="marquee-wrapper top">
+        <ul class="marquee marquee-top">
+          <li>HTML/CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>React Native</li>
+          <li>Typescript</li>
+          <!-- дублювання -->
+          <li>HTML/CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>React Native</li>
+          <li>Typescript</li>
+          <li>HTML/CSS</li>
+        </ul>
+      </div>
+
+      <div class="marquee-wrapper bottom">
+        <ul class="marquee marquee-bottom">
+          <li>Typescript</li>
+          <li>React Native</li>
+          <li>Node.js</li>
+          <li>React</li>
+          <li>JavaScript</li>
+          <li>HTML/CSS</li>
+          <!-- дублювання -->
+          <li>Typescript</li>
+          <li>React Native</li>
+          <li>Node.js</li>
+          <li>React</li>
+          <li>JavaScript</li>
+          <li>HTML/CSS</li>
+          <li>Typescript</li>
+        </ul>
+      </div>
+
+      <!-- <button id="theme-toggle">🌓 Змінити тему</button> -->
+      <label class="theme-toggle">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="toggle-slider"></span>
+      </label>
+    </section>
+    <script src="js/js.js"></script>
+
+    <!-- імітувати безкінечну прокрутку при перезавантаженні -->
+    <script>
+      const delay = Math.random() * 15;
+      localStorage.setItem('marquee-delay', delay);
+
+      const savedDelay = localStorage.getItem('marquee-delay');
+      document.querySelectorAll('.marquee').forEach(el => {
+        el.style.animationDelay = `-${savedDelay}s`;
+      });
+    </script>
   </body>
 </html>
